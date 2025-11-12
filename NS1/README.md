@@ -1,3 +1,5 @@
+### File is only valy for MacOS enviroment, updated needed
+
 ### Setup ubunto vm with colima
 
 # Install Colima via Homebrew
