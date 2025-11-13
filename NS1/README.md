@@ -1,6 +1,6 @@
-### File is only valy for MacOS enviroment, updated needed
+### Note: This guide is currently tailored for macOS. Updates for other operating systems are welcome.
 
-### Setup ubunto vm with colima
+### Setup ubuntu vm with colima
 
 # Install Colima via Homebrew
 
