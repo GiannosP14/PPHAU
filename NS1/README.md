@@ -59,6 +59,6 @@ pip install pyrealsense2
 2.  Install dev-conteiners extension
 
 ==================================================================
-docker run -it --name realsense-dev -v "/Users/jesusjimenez/Documents/TUM2024/WiSe2025/Lab Human Activity understanding:/workspace" realsense-image:latest bash
+docker run -it --name realsense-dev -v "<your_localproject_path>:/workspace" realsense-image:latest bash
 
 jhskdjbksdjbc
