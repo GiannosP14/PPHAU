@@ -41,7 +41,7 @@ yolo_weights = "yolov8n.pt"
 n_clusters = 2
 
 # ROS topics
-rgb_topic = "/camera/135122071615/color/image_raw"
+rgb_topic = "/camera/135122071615/color/image_raw/compressed"
 depth_topic = "/camera/135122071615/aligned_depth_to_color/image_raw"
 camera_info_topic = "/camera/135122071615/color/camera_info"
 
@@ -71,22 +71,26 @@ bridge = CvBridge()
 # 1. Extract frames from bag file
 # ============================================================
 bag = rosbag.Bag(bag_file)
-count = 0
+rgb_count = 0
+depth_count = 0
 for topic, msg, t in bag.read_messages(topics=[rgb_topic, depth_topic]):
-    if count >= num_samples:
+    if rgb_count >= num_samples and depth_count >= num_samples:
         break
 
-    if topic == rgb_topic:
-        cv_image = bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
-        cv2.imwrite(f"{extracted_rgb}/frame_{count:04d}.png", cv_image)
+    if topic == rgb_topic and rgb_count < num_samples:
+        np_arr = np.frombuffer(msg.data, np.uint8)  # decode compressed image
+        cv_image = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+        cv2.imwrite(f"{extracted_rgb}/frame_{rgb_count:04d}.png", cv_image)
+        rgb_count += 1
 
-    elif topic == depth_topic:
+    elif topic == depth_topic and depth_count < num_samples:
         cv_depth = bridge.imgmsg_to_cv2(msg, desired_encoding="passthrough")
-        cv2.imwrite(f"{extracted_depth}/frame_{count:04d}.png", cv_depth)
-        count += 1
+        cv2.imwrite(f"{extracted_depth}/frame_{depth_count:04d}.png", cv_depth)
+        depth_count += 1
 
 bag.close()
-print(f"Extracted {count} samples")
+print(f"Extracted {rgb_count} RGB frames and {depth_count} Depth frames")
+
 
 # ============================================================
 # 2. Split into train/val
