@@ -8,3 +8,15 @@
      - Binary mask images
      - Colored overlay images  
    - Outputs saved in `results`
+
+
+# Venv
+cd homework2.1
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install opencv-python numpy scipy scikit-learn ultralytics
+
+python hw2_yolo.py
+
+when done: deactivate
