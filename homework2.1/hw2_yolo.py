@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from scipy.ndimage import binary_dilation
 from ultralytics import YOLO
+import warnings
 
 # ==============================
 # Parameters
@@ -47,19 +48,29 @@ def clean_and_cluster(roi_rgb, roi_xyz, n_clusters=N_CLUSTERS):
     h, w = roi_rgb.shape[:2]
     rgb_flat = roi_rgb.reshape(-1, 3).astype(np.float32)
     xyz_flat = roi_xyz.reshape(-1, 3).astype(np.float32)
+
     valid = np.isfinite(xyz_flat).all(axis=1) & (xyz_flat[:, 2] > 0)
     if valid.sum() < n_clusters:
         return np.zeros((h, w), dtype=np.uint8)
+
     features = np.concatenate([rgb_flat[valid], xyz_flat[valid]], axis=1)
-    kmeans = KMeans(n_clusters=n_clusters, random_state=0).fit(features)
+
+    # Silence warnings from KMeans
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        kmeans = KMeans(n_clusters=n_clusters, random_state=0).fit(features)
+
     labels = np.full(rgb_flat.shape[0], -1, dtype=np.int32)
     labels[valid] = kmeans.labels_
     labels = labels.reshape(h, w)
+
+    # Choose foreground cluster as the one closest to camera (smallest Z)
     cluster_means = [
         xyz_flat[labels.reshape(-1) == k][:, 2].mean() if np.any(labels == k) else 1e9
         for k in range(n_clusters)
     ]
     fg_cluster = np.argmin(cluster_means)
+
     mask = (labels == fg_cluster).astype(np.uint8)
     mask = binary_dilation(mask, iterations=2)
     return mask
