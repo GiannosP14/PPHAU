@@ -1,4 +1,6 @@
 *.bag
+*.DS_Store
+pyrealsense-env/
 *.png
 *.pt
 *.txt
