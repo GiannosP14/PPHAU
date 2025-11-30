@@ -1,6 +1,5 @@
 *.bag
 *.DS_Store
-*.png
-*.pht
+*.pth
 *.pt
 
