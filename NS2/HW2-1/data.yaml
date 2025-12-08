@@ -1,0 +1,7 @@
+
+path: dataset_yolo
+train: images/train
+val: images/val
+
+nc: 5
+names: ['person', 'table', 'leg', 'tool1', 'tool2']
