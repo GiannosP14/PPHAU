@@ -1,0 +1,11 @@
+Epoch 0: train_loss=0.868907, val_loss=0.740040, accuracy=73.44, lr=2e-05
+Epoch 1: train_loss=0.733704, val_loss=0.651906, accuracy=75.63, lr=2e-05
+Epoch 2: train_loss=0.655538, val_loss=0.594319, accuracy=79.65, lr=2e-05
+Epoch 3: train_loss=0.606154, val_loss=0.543739, accuracy=82.09, lr=2e-05
+Epoch 4: train_loss=0.551390, val_loss=0.492859, accuracy=82.57, lr=2e-05
+Epoch 5: train_loss=0.482794, val_loss=0.465328, accuracy=83.36, lr=2e-05
+Epoch 6: train_loss=0.459275, val_loss=0.418903, accuracy=84.88, lr=2e-05
+Epoch 7: train_loss=0.420593, val_loss=0.411748, accuracy=84.91, lr=2e-05
+Epoch 8: train_loss=0.384446, val_loss=0.368166, accuracy=87.61, lr=2e-05
+Epoch 9: train_loss=0.361054, val_loss=0.323983, accuracy=89.35, lr=2e-05
+Model Type: transformer, Dropout Rate: 0.2,Batch Size: 8

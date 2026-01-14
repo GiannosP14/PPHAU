@@ -1,0 +1,11 @@
+Epoch 0: train_loss=0.562481, val_loss=0.571500, accuracy=94.87, lr=2e-05
+Epoch 1: train_loss=0.465382, val_loss=0.500806, accuracy=94.87, lr=2e-05
+Epoch 2: train_loss=0.414878, val_loss=0.429203, accuracy=94.87, lr=2e-05
+Epoch 3: train_loss=0.341431, val_loss=0.370957, accuracy=97.44, lr=2e-05
+Epoch 4: train_loss=0.294703, val_loss=0.335200, accuracy=97.44, lr=2e-05
+Epoch 5: train_loss=0.260696, val_loss=0.298563, accuracy=97.44, lr=2e-05
+Epoch 6: train_loss=0.227162, val_loss=0.273571, accuracy=97.44, lr=2e-05
+Epoch 7: train_loss=0.202607, val_loss=0.269693, accuracy=97.44, lr=2e-05
+Epoch 8: train_loss=0.179544, val_loss=0.248016, accuracy=97.44, lr=2e-05
+Epoch 9: train_loss=0.157514, val_loss=0.220427, accuracy=97.44, lr=2e-05
+Model Type: lstm, Dropout Rate: 0.3,Batch Size: 16

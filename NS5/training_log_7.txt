@@ -1,0 +1,21 @@
+Epoch 0: train_loss=3.330963, val_loss=2.569599, accuracy=24.44, lr=0.0002
+Epoch 1: train_loss=2.274725, val_loss=2.108453, accuracy=31.19, lr=0.0002
+Epoch 2: train_loss=2.060257, val_loss=1.962665, accuracy=32.77, lr=0.0002
+Epoch 3: train_loss=1.966198, val_loss=1.882563, accuracy=33.76, lr=0.0002
+Epoch 4: train_loss=1.899131, val_loss=1.824581, accuracy=34.68, lr=0.0002
+Epoch 5: train_loss=1.849386, val_loss=1.778248, accuracy=35.18, lr=0.0002
+Epoch 6: train_loss=1.811131, val_loss=1.741559, accuracy=36.10, lr=0.0002
+Epoch 7: train_loss=1.770095, val_loss=1.713173, accuracy=36.55, lr=0.0002
+Epoch 8: train_loss=1.724472, val_loss=1.687706, accuracy=36.70, lr=0.0002
+Epoch 9: train_loss=1.672390, val_loss=1.668055, accuracy=36.99, lr=0.0002
+Epoch 10: train_loss=1.643209, val_loss=1.660841, accuracy=38.00, lr=0.0002
+Epoch 11: train_loss=1.620892, val_loss=1.651970, accuracy=39.68, lr=0.0002
+Epoch 12: train_loss=1.600091, val_loss=1.625663, accuracy=40.25, lr=0.0002
+Epoch 13: train_loss=1.553802, val_loss=1.598109, accuracy=41.77, lr=0.0002
+Epoch 14: train_loss=1.512914, val_loss=1.573466, accuracy=43.74, lr=0.0002
+Epoch 15: train_loss=1.464160, val_loss=1.527782, accuracy=45.20, lr=0.0002
+Epoch 16: train_loss=1.410897, val_loss=1.495633, accuracy=46.31, lr=0.0002
+Epoch 17: train_loss=1.370374, val_loss=1.474610, accuracy=48.30, lr=0.0002
+Epoch 18: train_loss=1.323751, val_loss=1.475407, accuracy=48.65, lr=0.0002
+Epoch 19: train_loss=1.282657, val_loss=1.480304, accuracy=49.38, lr=0.0002
+Model Type: lstm, Dropout Rate: 0.2,Batch Size: 8
